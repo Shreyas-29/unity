@@ -1,34 +1,62 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<p align="center">
+  <img src="https://github.com/Shreyas-29/unity/assets/111555846/acd3f23c-c5e4-4545-8ad1-615fd27176d5" alt="Unity Social Media App Logo" width="150" height="150">
+<!--   (https://github.com/Shreyas-29/unity/assets/111555846/acd3f23c-c5e4-4545-8ad1-615fd27176d5) -->
+</p>
+<h1 align="center">Unity Social Media App</h1>
+<div align="center">
+  <strong>Your Go-To Social Media Platform for Unity Enthusiasts</strong>
+</div>
+<br />
+<div align="center">
+  <a href="https://github.com/Shreyas-29/unity-social-media-app/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/your-username/unity-social-media-app?style=for-the-badge"></a>
+  <a href="https://github.com/Shreyas-29/unity-social-media-app/issues"><img alt="GitHub issues" src="https://img.shields.io/github/issues/your-username/unity-social-media-app?style=for-the-badge"></a>
+  <a href="https://github.com/Shreyas-29/unity-social-media-app/network"><img alt="GitHub forks" src="https://img.shields.io/github/forks/your-username/unity-social-media-app?style=for-the-badge"></a>
+</div>
+<br />
+<p align="center">
+  <img src="https://github.com/Shreyas-29/unity/assets/111555846/c168010a-caad-4dd1-8b16-6e34872de8a4" alt="Unity Social Media App Screenshot">
+</p>
+<h1 align="center">Table of Contents</h1>
 
-## Getting Started
+1. About
+2. Features
+3. Tech Stack
+4. Getting Started
+5. Usage
+6. Contributing
+7. License
+8. About
+<br />
+Unity Social Media App is a vibrant and interactive platform designed for Unity game developers and enthusiasts. Connect with fellow developers, showcase your projects, and explore a world of Unity-powered creativity.
 
-First, run the development server:
+Features
+Profile Customization: Express your unique style with customizable profiles.
+Posts and Stories: Share your latest updates, projects, and stories.
+Unity Integration: Seamlessly connect your Unity projects to your profile.
+Real-time Interaction: Engage with other users through likes, comments, and more.
+Analytics: Track the performance of your posts with in-depth analytics.
+Secure and Private: Your data is safe with our robust security measures.
+Dark Mode: Enjoy the app in both light and dark themes.
+<p align="center">
+<!--   <img src="feed.png" alt="Feed"> -->
+</p>
+Tech Stack
+Unity Social Media App leverages a powerful tech stack to provide a smooth and engaging user experience:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+Database: MongoDB for efficient data storage. 
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+ORM: Prisma for database operations.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+UI Framework: Tailwind CSS for responsive and beautiful designs.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Validation: Zod for robust input validation.
 
-## Learn More
+Animations: Framer Motion for delightful motion effects.
 
-To learn more about Next.js, take a look at the following resources:
+State Management: Zustand for efficient state management.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Frontend Framework: Next.js for fast and dynamic web applications.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+<p align="center">
+<!--   <img src="tech-stack.png" alt="Tech Stack"> -->
+</p>
