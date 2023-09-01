@@ -60,7 +60,7 @@ const CreatePostModal: FC<CreatePostModalProps> = ({
             setEditorOpen(false);
             postInput.setPostText("");
         }
-    }, [createPostModal.isOpen, postInput.postText, postInput]);
+    }, [createPostModal.isOpen, postInput.postText]);
 
     const [optimisticPosts, addOptimisticPost] = useOptimistic(posts, (state, newPost: Post) => {
         return [...state, newPost];

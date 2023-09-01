@@ -51,7 +51,7 @@ const CreateStoryModal: FC<CreateStoryModalProps> = ({
             setEditorOpen(false);
             caption.setCaption("");
         }
-    }, [createStoryModal.isOpen, caption.caption, caption]);
+    }, [createStoryModal.isOpen, caption.caption]);
 
     const [optimisticStories, addOptimisticStory] = useOptimistic(stories, (state, newStory: ExtendedStory) => {
         return [...state, newStory];

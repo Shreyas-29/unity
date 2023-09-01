@@ -52,22 +52,22 @@ const Overview: FC<OverviewProps> = ({
 
     const days = 7;
 
-    useEffect(() => {
-        if (session?.user) {
-            try {
-                getCount(days, session?.user?.id!)
-                    .then((data) => {
-                        setData(data);
-                        console.log("data", data);
-                    })
-                    .catch((error) => {
-                        console.error('Error fetching profile view counts:', error);
-                    });
-            } catch (error) {
-                console.log("error getting overview data");
-            }
-        }
-    }, [days, session?.user?.id, getCount, session?.user]);
+    // useEffect(() => {
+    //     if (session?.user) {
+    //         try {
+    //             getCount(days, session?.user?.id!)
+    //                 .then((data) => {
+    //                     setData(data);
+    //                     console.log("data", data);
+    //                 })
+    //                 .catch((error) => {
+    //                     console.error('Error fetching profile view counts:', error);
+    //                 });
+    //         } catch (error) {
+    //             console.log("error getting overview data");
+    //         }
+    //     }
+    // }, [days, session?.user?.id, session?.user]);
 
     return (
         <div className="w-full p-4 lg:py-8">

@@ -1,10 +1,12 @@
+"use server";
+
 import { getAuthSession } from "@/lib/auth";
 import { db } from "@/lib/db";
 import { revalidatePath } from "next/cache";
 import { Audience } from "@prisma/client";
 
 export const createPost = async (postData: FormData) => {
-    "use server";
+    // "use server";
 
     const session = await getAuthSession();
 

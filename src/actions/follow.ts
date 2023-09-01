@@ -1,9 +1,10 @@
+"use server";
+
 import { getAuthSession } from "@/lib/auth";
 import { db } from "@/lib/db";
 import { revalidatePath } from "next/cache";
 
 export const follow = async (userId: string) => {
-    "use server";
 
     try {
 

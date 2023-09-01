@@ -1,3 +1,5 @@
+"use server";
+
 import { db } from "@/lib/db";
 import { revalidatePath } from "next/cache";
 
@@ -89,7 +91,6 @@ import { revalidatePath } from "next/cache";
 
 
 export const bookmark = async (postId: string, userId: string) => {
-    "use server";
 
     try {
 

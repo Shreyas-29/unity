@@ -1,7 +1,8 @@
+"use server";
+
 import { db } from "@/lib/db";
 
 const profileCount = async (userId: string) => {
-    "use server";
 
     try {
 

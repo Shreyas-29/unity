@@ -1,8 +1,9 @@
+"use server";
+
 import { getAuthSession } from "@/lib/auth";
 import { db } from "@/lib/db";
 
 const getViewCount = async (days: number, userId: string) => {
-    "use server";
 
     try {
 

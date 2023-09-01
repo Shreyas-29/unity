@@ -1,8 +1,9 @@
+"use server";
+
 import { db } from "@/lib/db";
 import { revalidatePath } from "next/cache";
 
 export const like = async (postId: string, userId: string) => {
-    "use server";
 
     try {
 

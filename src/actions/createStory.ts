@@ -1,9 +1,11 @@
+"use server";
+
 import { getAuthSession } from "@/lib/auth";
 import { db } from "@/lib/db";
 import { revalidatePath } from "next/cache";
 
 export const createStory = async (postData: FormData) => {
-    "use server";
+    // "use server";
 
     const session = await getAuthSession();
 

@@ -2,53 +2,53 @@ import { getAuthSession } from "@/lib/auth";
 import { db } from "@/lib/db";
 import { revalidatePath } from "next/cache";
 
-export const follow = async (userId: string) => {
-    "use server";
+// export const follow = async (userId: string) => {
+//     "use server";
 
-    try {
+//     try {
 
-        const session = await getAuthSession();
+//         const session = await getAuthSession();
 
-        if (!session?.user) {
-            console.log("No user found");
-            return;
-        }
+//         if (!session?.user) {
+//             console.log("No user found");
+//             return;
+//         }
 
-        const user = await db.user.findUnique({
-            where: {
-                id: userId
-            }
-        });
+//         const user = await db.user.findUnique({
+//             where: {
+//                 id: userId
+//             }
+//         });
 
-        if (!user) {
-            console.log("No user found");
-            return;
-        }
+//         if (!user) {
+//             console.log("No user found");
+//             return;
+//         }
 
-        const userFollowed = user.followersIds.includes(session.user.id);
+//         const userFollowed = user.followersIds.includes(session.user.id);
 
-        let updatedFollowersIds = user.followersIds.slice();
+//         let updatedFollowersIds = user.followersIds.slice();
 
-        if (userFollowed) {
-            updatedFollowersIds = updatedFollowersIds.filter((id) => id !== session.user.id);
-        } else {
-            updatedFollowersIds.push(session.user.id);
-        }
+//         if (userFollowed) {
+//             updatedFollowersIds = updatedFollowersIds.filter((id) => id !== session.user.id);
+//         } else {
+//             updatedFollowersIds.push(session.user.id);
+//         }
 
-        await db.user.update({
-            where: {
-                id: userId
-            },
-            data: {
-                followersIds: updatedFollowersIds
-            }
-        });
+//         await db.user.update({
+//             where: {
+//                 id: userId
+//             },
+//             data: {
+//                 followersIds: updatedFollowersIds
+//             }
+//         });
 
-        return !userFollowed;
+//         return !userFollowed;
 
-    } catch (error) {
-        console.log("Error following user: ", error);
-    }
+//     } catch (error) {
+//         console.log("Error following user: ", error);
+//     }
 
-    revalidatePath("/");
-};
+//     revalidatePath("/");
+// };
