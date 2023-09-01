@@ -38,18 +38,25 @@ Analytics: Track the performance of your posts with in-depth analytics.
 Secure and Private: Your data is safe with our robust security measures.
 Dark Mode: Enjoy the app in both light and dark themes.
 <p align="center">
-  <img src="feed.png" alt="Feed">
+<!--   <img src="feed.png" alt="Feed"> -->
 </p>
 Tech Stack
 Unity Social Media App leverages a powerful tech stack to provide a smooth and engaging user experience:
 
-Database: MongoDB for efficient data storage.
+Database: MongoDB for efficient data storage. 
+
 ORM: Prisma for database operations.
+
 UI Framework: Tailwind CSS for responsive and beautiful designs.
+
 Validation: Zod for robust input validation.
+
 Animations: Framer Motion for delightful motion effects.
+
 State Management: Zustand for efficient state management.
+
 Frontend Framework: Next.js for fast and dynamic web applications.
+
 <p align="center">
-  <img src="tech-stack.png" alt="Tech Stack">
+<!--   <img src="tech-stack.png" alt="Tech Stack"> -->
 </p>
