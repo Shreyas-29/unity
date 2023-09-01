@@ -53,6 +53,7 @@ import Providers from "./Providers";
 import PostContent from "./PostContent";
 import Modal from "./Modal";
 import LikeButton from "./LikeButton";
+import StoryModal from "./StoryModal";
 
 
 export {
@@ -132,5 +133,6 @@ export {
     SelectTrigger,
     SelectValue,
     RadioGroup,
-    RadioGroupItem
+    RadioGroupItem,
+    StoryModal
 }

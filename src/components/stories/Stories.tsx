@@ -25,7 +25,7 @@ const Stories: FC<StoriesProps> = ({
 
     const router = useRouter();
 
-    const storyModal = useCreateStoryModal();
+    const createStoryModal = useCreateStoryModal();
 
     const { authToast } = useCustomToast();
 
@@ -54,21 +54,18 @@ const Stories: FC<StoriesProps> = ({
         setCurrentSlide(currentSlide + 1);
     };
 
-    // console.log('user', user?.id, 'story', stories?.map((story) => story.author.id));
-
     const handleClickStory = (story: ExtendedStory) => {
-        // Check if there is a current user
         if (!user) {
             router.push(`/s/${story.id}`);
             setShowAuthorImage(false);
-            storyModal.onClose();
+            createStoryModal.onClose();
         } else if (user.id !== story.author.id) {
             router.push(`/s/${story.id}`);
-            storyModal.onClose();
+            createStoryModal.onClose();
         } else if (user.id === story.author.id) {
             router.push(`/s/${story.id}`);
         } else {
-            storyModal.onOpen();
+            createStoryModal.onOpen();
         }
     };
 
@@ -76,7 +73,7 @@ const Stories: FC<StoriesProps> = ({
         if (!user) {
             return authToast();
         } else {
-            storyModal.onOpen();
+            createStoryModal.onOpen();
         }
     };
 
@@ -97,7 +94,7 @@ const Stories: FC<StoriesProps> = ({
 
                         {showAuthorImage && user?.story.length === 0 ? (
                             <div
-                                onClick={() => storyModal.onOpen()}
+                                onClick={() => createStoryModal.onOpen()}
                                 className={cn(
                                     "flex flex-col items-center justify-center mx-2 relative last:mr-4 brightness-95 hover:brightness-105 transition-colors select-none cursor-pointer overflow-hidden"
                                 )}

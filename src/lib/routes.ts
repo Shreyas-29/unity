@@ -8,25 +8,25 @@ export const routes = [
     {
         label: 'Search',
         image: '/svg/search.svg',
-        href: '/search',
+        href: '/',
         color: "text-slate-600",
     },
     {
         label: 'Explore',
         image: '/svg/compass.svg',
-        href: '/explore',
+        href: '/',
         color: "text-slate-600",
     },
     {
         label: 'Messages',
         image: '/svg/send.svg',
-        href: '/messages',
+        href: '/',
         color: "text-slate-600",
     },
     {
         label: 'Saved',
         image: '/svg/bookmark.svg',
-        href: '/saved',
+        href: '/',
         color: "text-slate-600",
     },
     // {
@@ -38,13 +38,13 @@ export const routes = [
     {
         label: 'Communities',
         image: '/svg/users.svg',
-        href: '/communities',
+        href: '/',
         color: "text-slate-600",
     },
     {
         label: 'Profile',
         image: '/svg/user.svg',
-        href: '/account',
+        href: '/account/edit',
         color: "text-slate-600",
     },
 ];

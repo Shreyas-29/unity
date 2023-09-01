@@ -5,6 +5,7 @@ import { useOnClickOutside } from './use-on-click-outside';
 import { useOptionsModal } from './use-options-modal';
 import { useCustomToast } from './use-auth-toast';
 import { useCreateStoryModal } from './use-create-story-modal';
+import { useStoryModal } from './story-modal';
 
 
 export {
@@ -15,4 +16,5 @@ export {
     useOptionsModal,
     useCustomToast,
     useCreateStoryModal,
+    useStoryModal
 }

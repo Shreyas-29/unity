@@ -2,7 +2,6 @@ import { createPost, createStory, getPosts, getStories } from '@/actions';
 import { AlertModal, CreatePostModal, CreateStoryModal, Providers, Toaster } from '@/components';
 import Header from '@/components/Header';
 import { getAuthSession } from '@/lib/auth';
-import startScheduler from '@/lib/scheduler';
 import { cn } from '@/lib/utils';
 import '@/styles/globals.css';
 import { Metadata } from 'next';
