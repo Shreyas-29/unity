@@ -12,11 +12,13 @@ import { FC } from "react";
 interface PostHeaderProps {
     post: ExtendedPost;
     session: Session | null;
+    deletePost: (postId: string) => Promise<void>;
 }
 
 const PostHeader: FC<PostHeaderProps> = ({
     post,
-    session
+    session,
+    deletePost
 }) => {
 
     // console.log(post.id);
@@ -121,7 +123,7 @@ const PostHeader: FC<PostHeaderProps> = ({
                     <span className="sr-only">Options</span>
                 </Button>
             </div>
-            <OptionsModal post={post} />
+            <OptionsModal post={post} deletePost={deletePost} />
         </div>
     );
 }

@@ -11,13 +11,15 @@ interface PostFeedProps {
     posts: ExtendedPost[] | undefined;
     like: (postId: string, userId: string) => Promise<boolean | void>
     bookmark: (postId: string, userId: string) => Promise<boolean | void>
+    deletePost: (postId: string) => Promise<void>
 }
 
 const PostFeed: FC<PostFeedProps> = ({
     session,
     posts,
     like,
-    bookmark
+    bookmark,
+    deletePost
 }) => {
 
     return (
@@ -35,6 +37,7 @@ const PostFeed: FC<PostFeedProps> = ({
                         session={session}
                         like={like}
                         bookmark={bookmark}
+                        deletePost={deletePost}
                     />
                 </motion.div>
             ))}

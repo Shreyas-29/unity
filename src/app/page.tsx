@@ -1,4 +1,4 @@
-import { bookmark, getCurrentUser, getPosts, getStories, like } from "@/actions";
+import { bookmark, deletePost, getCurrentUser, getPosts, getStories, like } from "@/actions";
 import { Followbar, GeneralFeed, Sidebar } from "@/components";
 import { getAuthSession } from "@/lib/auth";
 import { ExtendedPost } from "@/types/post";
@@ -50,6 +50,7 @@ export default async function FeedPage() {
                 like={like}
                 bookmark={bookmark}
                 stories={stories}
+                deletePost={deletePost}
             />
             <Followbar />
         </div>

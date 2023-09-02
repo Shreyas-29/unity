@@ -18,6 +18,7 @@ import { createStory } from "./createStory";
 import { like } from "./like";
 import { bookmark } from "./bookmark";
 import { follow } from "./follow";
+import { deletePost } from "./deletePost";
 
 
 export {
@@ -39,5 +40,6 @@ export {
     profileCount,
     getViewCount,
     getUsers,
-    deleteStory
+    deleteStory,
+    deletePost
 }

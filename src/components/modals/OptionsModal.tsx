@@ -9,10 +9,12 @@ import { FC, useEffect, useState } from "react";
 
 interface OptionsModalProps {
     post: ExtendedPost;
+    deletePost: (postId: string) => void;
 }
 
 const OptionsModal: FC<OptionsModalProps> = ({
-    post
+    post,
+    deletePost
 }) => {
 
     const router = useRouter();
@@ -50,6 +52,10 @@ const OptionsModal: FC<OptionsModalProps> = ({
             });
     };
 
+    const handleDelete = () => {
+        deletePost(post?.id!);
+    };
+
 
     return (
         <Dialog open={optionsModal.isOpen} onOpenChange={handleCloseModal}>
@@ -67,6 +73,13 @@ const OptionsModal: FC<OptionsModalProps> = ({
                             </Button>
                         )}
                     </div>
+                    {session?.user.id === post?.author.id ? (
+                        <div onClick={handleDelete} className="w-full border-b border-zinc-200/60">
+                            <Button variant="outline" size="lg" className="w-full border-transparent border-none text-destructive hover:bg-red-50 hover:text-destructive">
+                                Delete
+                            </Button>
+                        </div>
+                    ) : null}
                     <div className="w-full border-b border-zinc-200/60">
                         <Button variant="outline" size="lg" className="w-full border-transparent border-none">
                             Add to favorites

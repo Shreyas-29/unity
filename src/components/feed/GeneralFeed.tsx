@@ -13,15 +13,17 @@ interface GeneralFeedProps {
     stories: ExtendedStory[];
     like: (postId: string, userId: string) => Promise<boolean | void>;
     bookmark: (postId: string, userId: string) => Promise<boolean | void>;
+    deletePost: (postId: string) => Promise<void>;
 }
 
-const GeneralFeed: FC<GeneralFeedProps> = async ({
+const GeneralFeed: FC<GeneralFeedProps> = ({
     session,
     user,
     posts,
     stories,
     like,
-    bookmark
+    bookmark,
+    deletePost
 }) => {
 
     return (
@@ -61,6 +63,7 @@ const GeneralFeed: FC<GeneralFeedProps> = async ({
                                 posts={posts}
                                 like={like}
                                 bookmark={bookmark}
+                                deletePost={deletePost}
                             />
                         </div>
                     </div>
@@ -71,13 +74,3 @@ const GeneralFeed: FC<GeneralFeedProps> = async ({
 }
 
 export default GeneralFeed;
-{/* <ul className="grid w-full max-w-lg grid-cols-1 mx-auto">
-    {posts?.map((post) => (
-        <li key={post.id} className="flex items-center justify-start w-full gap-2 p-4 border rounded-lg">
-            <img src={post.image} alt="" className="object-cover w-20 h-20 rounded-md" />
-            <span>
-                {post.content.slice(0, 40)}...
-            </span>
-        </li>
-    ))}
-</ul> */}
