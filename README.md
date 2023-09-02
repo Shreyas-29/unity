@@ -20,13 +20,13 @@
 
 <h1 align="center">Table of Contents</h1>
 
-1. About
-2. Features]
-3. Tech Stack
-4. Getting Started
-5. Usage
-6. Contributing
-7. License
+1. [About](#about)
+2. [Features](#features)
+3. [Tech Stack](#tech-stack)
+4. [Getting Started](#getting-started)
+5. [Usage](#usage)
+6. [Contributing](#contributing)
+7. [License](#license)
 
 <br />
 
