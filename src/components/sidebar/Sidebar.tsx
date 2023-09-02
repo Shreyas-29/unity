@@ -20,12 +20,6 @@ const Sidebar: FC<SidebarProps> = ({
 
     const pathname = usePathname();
 
-
-    {/* <div className={cn(
-        "fixed left-0 bottom-0 top-24 pb-28 md:px-4 w-[10%] sm:w-[11%] md:w-[12%] xl:w-72 h-full z-50 hidden md:inline-block",
-        border && "border-r border-gray-100"
-        <div className="flex flex-col items-center justify-between w-full h-full pt-8 pb-2 bg-white shadow-top-riht rounded-2xl md:px-4">
-    )}> */}
     return (
         <div className={cn(
             "fixed left-0 bottom-0 top-16 pb-24 md:px-4 w-[10%] sm:w-[11%] md:w-[12%] xl:w-72 h-full z-50 hidden md:inline-block bg-white overflow-hidden",

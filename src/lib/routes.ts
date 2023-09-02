@@ -8,37 +8,31 @@ export const routes = [
     {
         label: 'Search',
         image: '/svg/search.svg',
-        href: '/',
+        href: '/search',
         color: "text-slate-600",
     },
     {
         label: 'Explore',
         image: '/svg/compass.svg',
-        href: '/',
+        href: '/explore',
         color: "text-slate-600",
     },
     {
         label: 'Messages',
         image: '/svg/send.svg',
-        href: '/',
+        href: '/messages',
         color: "text-slate-600",
     },
     {
         label: 'Saved',
         image: '/svg/bookmark.svg',
-        href: '/',
+        href: '/bookmarks',
         color: "text-slate-600",
     },
-    // {
-    //     label: 'Notifications',
-    //     icon: Icons.notification,
-    //     href: '/Notifications',
-    //     color: "text-slate-600",
-    // },
     {
         label: 'Communities',
         image: '/svg/users.svg',
-        href: '/',
+        href: '/communities',
         color: "text-slate-600",
     },
     {
