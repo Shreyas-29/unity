@@ -6,7 +6,7 @@ const Followbar = async () => {
 
     const session = await getAuthSession();
 
-    const users = await getUsers(session?.user?.id!);
+    const users = await getUsers();
 
     return (
         <div className='fixed bottom-0 right-0 z-50 hidden w-1/4 h-full pb-24 top-16 lg:px-4 lg:block'>

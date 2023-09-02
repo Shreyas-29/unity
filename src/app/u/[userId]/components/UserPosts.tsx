@@ -28,7 +28,7 @@ const UserPosts: FC<UserPostsProps> = ({
                                 className="object-cover w-full h-full rounded-xl"
                             />
                             {/* <canvas className="w-full select-none h-52 rounded-xl" /> */}
-                            <div className="absolute inset-0 flex items-center justify-center transition duration-300 ease-in-out opacity-0 cursor-pointer bg-black/30 w-72 h-72 rounded-xl group-hover:opacity-100">
+                            <div className="absolute inset-0 hidden lg:flex items-center justify-center transition duration-300 ease-in-out opacity-0 cursor-pointer bg-black/30 w-72 h-72 rounded-xl group-hover:opacity-100">
                                 <div className="flex items-center justify-center w-full h-full space-x-4 rounded-xl">
                                     <Button
                                         size="xxs"

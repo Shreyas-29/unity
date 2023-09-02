@@ -49,11 +49,13 @@ import UserInfoCard from "./user/UserInfoCard";
 
 import Actions from "./Actions";
 import Header from "./Header";
+import MobileHeader from "./MobileHeader";
 import Providers from "./Providers";
 import PostContent from "./PostContent";
 import Modal from "./Modal";
 import LikeButton from "./LikeButton";
 import StoryModal from "./StoryModal";
+import MobileBottomBar from "./MobileBottomBar";
 
 
 export {
@@ -134,5 +136,7 @@ export {
     SelectValue,
     RadioGroup,
     RadioGroupItem,
-    StoryModal
+    StoryModal,
+    MobileHeader,
+    MobileBottomBar
 }

@@ -1,5 +1,5 @@
 import { createPost, createStory, getPosts, getStories } from '@/actions';
-import { AlertModal, CreatePostModal, CreateStoryModal, Providers, Toaster } from '@/components';
+import { AlertModal, CreatePostModal, CreateStoryModal, MobileBottomBar, MobileHeader, Providers, Toaster } from '@/components';
 import Header from '@/components/Header';
 import { getAuthSession } from '@/lib/auth';
 import { cn } from '@/lib/utils';
@@ -50,6 +50,8 @@ export default async function Layout({
                         <div className='relative flex flex-col w-full h-full'>
                             <div className='flex w-full'>
                                 <Header session={session} />
+                                <MobileHeader session={session} />
+                                <MobileBottomBar session={session} />
                             </div>
                             {children}
                             {post}

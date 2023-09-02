@@ -166,8 +166,8 @@ const CreateStoryModal: FC<CreateStoryModalProps> = ({
     return (
         <Dialog open={createStoryModal.isOpen} onOpenChange={handleCloseModal}>
             <DialogContent className={cn(
-                "lg:h-[500px] min-h-[400px] lg:max-w-md w-full select-none overflow-hidden",
-                (editorOpen && imageUrl.length >= 1) && "md:min-h-[550px] min-h-[450px]"
+                "lg:h-[500px] min-h-screen md:min-h-[400px] lg:max-w-md w-full select-none overflow-hidden",
+                (editorOpen && imageUrl.length >= 1) && "md:min-h-[550px]"
             )}>
                 <form
                     ref={ref}
@@ -241,7 +241,7 @@ const CreateStoryModal: FC<CreateStoryModalProps> = ({
                     {editorOpen && (
                         <div className="flex items-center justify-center w-full h-full overflow-hidden">
                             <div className="flex flex-col items-center justify-center w-full h-full">
-                                <div className="flex flex-col items-center justify-center flex-1 w-full mt-0 md:flex-row">
+                                <div className="flex flex-col items-center justify-center flex-1 w-full h-full mt-0 md:flex-row">
                                     <div className="relative flex flex-col items-center w-full h-full select-none">
                                         <div className="relative flex items-start w-full mt-4 overflow-hidden h-3/4">
                                             {imageUrl && (

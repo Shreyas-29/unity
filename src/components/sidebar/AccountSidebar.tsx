@@ -13,7 +13,7 @@ const AccountSidebar = () => {
     const pathname = usePathname();
 
     return (
-        <div className="flex flex-col items-start justify-start w-full h-full border-r lg:pl-72 border-slate-200">
+        <div className="flex flex-col items-start justify-start w-full h-full lg:border-r lg:pl-72 border-slate-200">
             <div className="flex flex-col items-start justify-start w-full p-4 border-b cursor-pointer select-none lg:p-8 border-slate-200">
                 <Link href="/" className="flex items-center cursor-pointer select-none">
                     <div className="flex items-center justify-start w-full gap-x-2">

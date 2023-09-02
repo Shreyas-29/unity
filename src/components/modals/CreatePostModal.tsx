@@ -188,7 +188,7 @@ const CreatePostModal: FC<CreatePostModalProps> = ({
     return (
         <Dialog open={createPostModal.isOpen} onOpenChange={handleCloseModal}>
             <DialogContent className={cn(
-                "lg:h-[500px] min-h-[400px] lg:max-w-2xl w-full select-none overflow-hidden",
+                "lg:h-[500px] min-h-screen md:min-h-[400px] lg:max-w-2xl w-full select-none overflow-hidden",
                 // editorOpen && selectedFilesURL.length < 1 ? "lg:max-w-2xl !z-50 opacity-0" : "lg:max-w-5xl opacity-100 z-[110"
                 // selectedFilesURL.length === 0 ? "lg:max-w-2xl" : "lg:max-w-2xl",
                 editorOpen ? "lg:max-w-5xl" : "lg:max-w-2xl",
@@ -266,38 +266,11 @@ const CreatePostModal: FC<CreatePostModalProps> = ({
                     {editorOpen && (
                         <div className="flex items-center justify-center w-full h-full overflow-hidden">
                             <div className="flex flex-col items-center justify-center w-full h-full">
-                                <div className="items-center justify-between hidden w-full bg-white rounded-md">
-                                    <Button
-                                        size="xxs"
-                                        type="button"
-                                        variant="outline"
-                                        disabled={isLoading}
-                                        onClick={() => {
-                                            if (editorOpen) {
-                                                setEditorOpen(false);
-                                                return;
-                                            }
-                                            alertModal.onOpen();
-                                            createPostModal.onOpen();
-                                        }}>
-                                        <ArrowLeft className="w-4 h-4" />
-                                    </Button>
-
-                                    <Button
-                                        size="md"
-                                        type="button"
-                                        variant="outline"
-                                        disabled={isLoading}
-                                        onClick={() => setEditorOpen(true)}
-                                    >
-                                        Next
-                                    </Button>
-                                </div>
-                                <div className="flex flex-col items-center justify-center flex-1 w-full mt-0 md:flex-row">
+                                <div className="flex flex-col items-center justify-center flex-1 w-full h-full mt-0 md:flex-row">
                                     <div className="relative flex flex-col items-center w-full h-full select-none md:flex-row">
                                         <div className={cn(
                                             "relative h-full overflow-hidden flex items-start",
-                                            editorOpen ? "w-[65%]" : "w-full"
+                                            editorOpen ? "w-full md:w-[65%]" : "md:w-full"
                                         )}>
                                             {imageUrl && (
                                                 <div className="absolute inset-0 w-full h-full rounded-lg select-none" onClickCapture={() => false}>
@@ -379,7 +352,7 @@ const CreatePostModal: FC<CreatePostModalProps> = ({
                                             )}
                                         </div>
                                         {editorOpen ? (
-                                            <div className="relative flex flex-col items-start w-[35%] h-full">
+                                            <div className="relative flex flex-col items-start w-full md:w-[35%] h-full mt-6 sm:mt-0">
                                                 <div className="flex flex-col items-end justify-between w-full h-full pl-2 flex-">
                                                     <div className="flex flex-col items-center justify-start flex-1 w-full h-full mt-1">
                                                         <div className="flex items-center justify-start w-full pt-1 pb-2">

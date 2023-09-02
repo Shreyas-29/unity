@@ -102,8 +102,8 @@ const PostContent: FC<ModalContentProps> = ({
     };
 
     return (
-        <div className="grid grid-cols-12 w-full min-h-[550px] gap-4">
-            <div className="w-full col-span-7 flex items-center relative max-h-[550px] overflow-hidden">
+        <div className="max-h-full md:max-h-max my-5 flex flex-col md:grid md:grid-cols-12 w-full items-start justify-start overflow-hidden min-h-[550px] gap-4">
+            <div className="w-full md:col-span-7 flex items-center justify-end h-full relative max-h-[400px] md:max-h-[550px] overflow-hidden">
                 <div className="flex items-center justify-center w-full h-full rounded-xl">
                     {post?.image ? (
                         <Image
@@ -117,7 +117,7 @@ const PostContent: FC<ModalContentProps> = ({
                     ) : null}
                 </div>
             </div>
-            <div className="relative flex flex-col items-start w-full h-full max-h-[550px] overflow-scroll col-span-5">
+            <div className="relative flex flex-col justify-start items-start w-full h-full md:max-h-[550px] overflow-scroll md:col-span-5">
                 <div className="sticky inset-x-0 top-0 flex items-center justify-between w-full pt-1 pb-2 border-b border-gray-100">
                     <div className="flex items-center flex-1 gap-3">
                         <Image src={post?.author?.image!} alt="" width={50} height={50} unoptimized className='rounded-full w-7 h-7' />
@@ -167,7 +167,7 @@ const PostContent: FC<ModalContentProps> = ({
                     <div className="flex flex-col items-start w-full py-4 gap-y-4">
                         <div className="flex items-start justify-between w-full">
                             <div className="flex items-start flex-1 gap-4">
-                                <div className="flex items-center justify-start z-0">
+                                <div className="z-0 flex items-center justify-start">
                                     <UserAvatar user={post.author!} />
                                 </div>
                                 <div className="flex flex-col items-start gap-y-0.5">
@@ -192,7 +192,7 @@ const PostContent: FC<ModalContentProps> = ({
                         </div>
                     </div>
                 </div>
-                <div className="sticky inset-x-0 bottom-0 flex items-center justify-start w-full pt-2 border-t border-gray-100">
+                <div className="sticky inset-x-0 bottom-0 flex items-center justify-start w-full pt-2 border-t border-gray-100 mt-auto">
                     <div className="flex flex-col items-center w-full">
                         <PostButtons
                             post={post}

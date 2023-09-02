@@ -147,7 +147,7 @@ const UserInfo: FC<UserInfoProps> = ({
 
 
     return (
-        <div className="flex flex-col items-center justify-start w-full h-full pl-56">
+        <div className="flex flex-col items-center justify-start w-full h-full py-8 md:py-0 md:pl-40 lg:pl-56">
             <div className="flex items-center justify-start w-full max-w-xl gap-10 pt-8 pb-12 lg:gap-14">
                 <div className="justify-start hidden md:flex">
                     <UserAvatar user={paramsUser} width="150px" height="150px" />
@@ -165,8 +165,8 @@ const UserInfo: FC<UserInfoProps> = ({
                                 <Button variant="secondary" className="flex items-center justify-center h-8 px-3 py-2 text-center">
                                     Edit Profile
                                 </Button>
-                                <Button variant="secondary" size="xxs" className="" onClick={() => signOut()}>
-                                    <Settings className="w-5 h-5" />
+                                <Button variant="secondary" className="flex items-center justify-center h-8 px-3 py-2 text-center" onClick={() => signOut()}>
+                                    Sign Out
                                 </Button>
                             </div>
                         ) : (

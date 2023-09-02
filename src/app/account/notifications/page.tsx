@@ -13,7 +13,7 @@ export default async function UserNotificationsPage({
 
     return (
         <div className="relative flex flex-col items-start justify-start w-full h-full mx-auto lg:p-8 md:ml-32 lg:ml-0 md:px-4">
-            <div className="flex items-center justify-start w-full my-4 lg:hidden">
+            <div className="flex items-center justify-start w-full pt-12 my-4 lg:hidden pb-2">
                 <Link href="/account">
                     <Button variant="outline" size="md" className="bg-transparent">
                         <ChevronLeft className="w-5 h-5 mr-1 text-current" />
@@ -21,7 +21,7 @@ export default async function UserNotificationsPage({
                     </Button>
                 </Link>
             </div>
-            <div className="flex items-center justify-start w-full">
+            <div className="flex items-center justify-start w-full mt-6">
                 <h2 className="text-xl font-semibold text-slate-900 lg:text-2xl">
                     User Notifications
                 </h2>

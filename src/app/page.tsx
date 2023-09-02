@@ -41,7 +41,7 @@ export default async function FeedPage() {
     // };
 
     return (
-        <div className="relative flex w-full max-w-lg min-h-screen mx-auto overflow-scroll md:pt-14">
+        <div className="relative flex w-full max-w-lg min-h-screen py-16 mx-auto overflow-scroll">
             <Sidebar session={session} />
             <GeneralFeed
                 session={session}

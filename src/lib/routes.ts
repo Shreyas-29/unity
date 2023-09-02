@@ -44,7 +44,7 @@ export const routes = [
     {
         label: 'Profile',
         image: '/svg/user.svg',
-        href: '/account/edit',
+        href: '/account',
         color: "text-slate-600",
     },
 ];

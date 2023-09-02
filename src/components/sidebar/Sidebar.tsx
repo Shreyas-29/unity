@@ -38,8 +38,8 @@ const Sidebar: FC<SidebarProps> = ({
                             key={route.href}
                             href={route.href}
                             className={cn(
-                                "flex items-center justify-center lg:justify-start w-full xl:px-5 py-2.5 font-medium group transition transform duration-300 active:scale-90 rounded-xl font-base hover:bg-slate-100 text-slate-700",
-                                pathname === route.href ? "text-slate-900 font-semibold" : route.color
+                                "flex items-center justify-center xl:justify-start w-full xl:px-5 py-2.5 font-medium group transition transform duration-300 active:scale-90 rounded-xl font-base hover:bg-slate-100 text-slate-700",
+                                pathname === route.href ? "text-slate-900 font-semibold" : "text-slate-600"
                             )}
                         >
                             <div className="flex items-center w-max xl:w-full">
@@ -57,8 +57,8 @@ const Sidebar: FC<SidebarProps> = ({
                         </Link>
                     ))}
                 </div>
-                <div className="flex items-center justify-start w-full mt-auto mb-3">
-                    <div className="flex items-center justify-start w-full py-2.5 cursor-pointer hover:bg-slate-100 group text-slate-700 rounded-xl xl:px-5">
+                <div className="flex items-center justify-center w-full mt-auto mb-3 xl:justify-start">
+                    <div className="flex items-center justify-center lg:justify-start w-full py-2.5 cursor-pointer hover:bg-slate-100 group text-slate-700 rounded-xl xl:px-5">
                         <div className="flex items-center w-max xl:w-full">
                             <Image
                                 src="/svg/menu.svg"

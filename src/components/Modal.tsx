@@ -48,7 +48,7 @@ const Modal: FC<ModalProps> = ({
 
     return (
         <Dialog open={isOpen} onOpenChange={handleClose}>
-            <DialogContent className="lg:max-w-5xl">
+            <DialogContent className="min-h-screen md:!min-h-max lg:max-w-5xl md:h-max">
                 <PostContent
                     post={post}
                     session={session}

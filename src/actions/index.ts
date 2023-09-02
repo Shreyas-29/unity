@@ -11,6 +11,7 @@ import deleteOldStories from "./scheduleStory";
 import profileCount from "./profileCount";
 import getViewCount from "./getViewCount";
 import getUsers from "./getUsers";
+import { deleteStory } from "./deleteStory";
 
 import { createPost } from "./createPost";
 import { createStory } from "./createStory";
@@ -37,5 +38,6 @@ export {
     deleteOldStories,
     profileCount,
     getViewCount,
-    getUsers
+    getUsers,
+    deleteStory
 }

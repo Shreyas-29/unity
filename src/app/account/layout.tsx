@@ -1,5 +1,6 @@
 import { AccountSidebar, Sidebar } from '@/components';
 import { getAuthSession } from '@/lib/auth';
+import { redirect } from 'next/navigation';
 import React from 'react';
 
 export default async function AccountPageLayout({
@@ -11,6 +12,10 @@ export default async function AccountPageLayout({
     // TODO: Change the title of the all pages accprdingly
 
     const session = await getAuthSession();
+
+    if (!session?.user) {
+        redirect("/signin");
+    }
 
     return (
         <main className='flex w-full min-h-screen mx-auto bg-slate-100 font-base'>
