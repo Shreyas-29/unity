@@ -21,8 +21,6 @@ const PostHeader: FC<PostHeaderProps> = ({
     deletePost
 }) => {
 
-    // console.log(post.id);
-
     const optionsModal = useOptionsModal();
 
     const openModal = () => {
@@ -76,7 +74,7 @@ const PostHeader: FC<PostHeaderProps> = ({
                             {post?.audience === 'PUBLIC' ? (
                                 <div className="flex items-center gap-x-0.5 ml-0.5">
                                     <span className="text-gray-500">
-                                        {/* • */}  ·
+                                        ·
                                     </span>
                                     <Tooltip>
                                         <TooltipTrigger asChild>
@@ -92,7 +90,7 @@ const PostHeader: FC<PostHeaderProps> = ({
                             ) : (
                                 <div className="flex items-center gap-x-0.5 ml-0.5">
                                     <span className="text-gray-500">
-                                        {/* • */}  ·
+                                        ·
                                     </span>
                                     <Tooltip>
                                         <TooltipTrigger asChild>

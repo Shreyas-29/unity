@@ -13,6 +13,7 @@ interface ModalProps {
     like: (postId: string, userId: string) => Promise<boolean | void>;
     bookmark: (postId: string, userId: string) => Promise<boolean | void>;
     follow: (userId: string) => Promise<boolean | void>;
+    deletePost: (postId: string) => Promise<void>
 }
 
 const Modal: FC<ModalProps> = ({
@@ -20,7 +21,8 @@ const Modal: FC<ModalProps> = ({
     session,
     like,
     bookmark,
-    follow
+    follow,
+    deletePost
 }) => {
 
     const router = useRouter();
@@ -55,6 +57,7 @@ const Modal: FC<ModalProps> = ({
                     like={like}
                     bookmark={bookmark}
                     follow={follow}
+                    deletePost={deletePost}
                 />
             </DialogContent>
         </Dialog>

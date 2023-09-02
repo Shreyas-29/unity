@@ -1,4 +1,4 @@
-import { bookmark, follow, getPostById, like } from '@/actions';
+import { bookmark, deletePost, follow, getPostById, like } from '@/actions';
 import { Modal } from '@/components';
 import { getAuthSession } from '@/lib/auth';
 import { ExtendedPost } from '@/types/post';
@@ -22,6 +22,7 @@ export default async function PostPage({
             like={like}
             bookmark={bookmark}
             follow={follow}
+            deletePost={deletePost}
         />
     )
 };

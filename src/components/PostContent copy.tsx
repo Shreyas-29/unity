@@ -134,7 +134,7 @@ const PostContent: FC<ModalContentProps> = ({
                             <span className="sr-only">Options</span>
                         </Button>
                     </div>
-                    <OptionsModal post={post} />
+                    {/* <OptionsModal post={post} /> */}
                 </div>
                 <div className="items-start hidden w-full h-[calc(100%-100px)] py-3 overflow-y-scroll lg:flex lg:flex-col border-b border-gray-100">
                     <div className="flex items-start w-full">

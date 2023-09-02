@@ -56,6 +56,7 @@ import Modal from "./Modal";
 import LikeButton from "./LikeButton";
 import StoryModal from "./StoryModal";
 import MobileBottomBar from "./MobileBottomBar";
+import Loader from "./Loader";
 
 
 export {
@@ -138,5 +139,6 @@ export {
     RadioGroupItem,
     StoryModal,
     MobileHeader,
-    MobileBottomBar
+    MobileBottomBar,
+    Loader
 }

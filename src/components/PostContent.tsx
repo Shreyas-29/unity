@@ -17,6 +17,7 @@ interface ModalContentProps {
     like: (postId: string, userId: string) => Promise<boolean | void>;
     bookmark: (postId: string, userId: string) => Promise<boolean | void>;
     follow: (userId: string) => Promise<boolean | void>;
+    deletePost: (postId: string) => Promise<void>
 }
 
 const PostContent: FC<ModalContentProps> = ({
@@ -24,7 +25,8 @@ const PostContent: FC<ModalContentProps> = ({
     session,
     like,
     bookmark,
-    follow
+    follow,
+    deletePost
 }) => {
 
     const router = useRouter();
@@ -144,7 +146,7 @@ const PostContent: FC<ModalContentProps> = ({
                             <span className="sr-only">Options</span>
                         </Button>
                     </div>
-                    <OptionsModal post={post} />
+                    <OptionsModal post={post} deletePost={deletePost} />
                 </div>
                 <div className="items-start hidden w-full h-[calc(100%-100px)] py-3 overflow-y-scroll lg:flex lg:flex-col border-b border-gray-100">
                     <div className="flex items-start w-full">
