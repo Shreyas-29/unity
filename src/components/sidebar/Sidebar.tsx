@@ -39,7 +39,7 @@ const Sidebar: FC<SidebarProps> = ({
                             href={route.href}
                             className={cn(
                                 "flex items-center justify-center xl:justify-start w-full xl:px-5 py-2.5 font-medium group transition transform duration-300 active:scale-90 rounded-xl font-base hover:bg-slate-100 text-slate-700",
-                                pathname === route.href ? "text-slate-900 font-semibold" : "text-slate-600"
+                                pathname === route.href ? "text-slate-900 font-semibold" : route.color
                             )}
                         >
                             <div className="flex items-center w-max xl:w-full">
