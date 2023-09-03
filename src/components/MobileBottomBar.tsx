@@ -9,7 +9,7 @@ import { toast, useCreatePostModal } from '@/hooks';
 import { useRouter } from 'next/navigation';
 
 interface MobileBottomBarProps {
-    session?: Session | null;
+    session: Session | null;
 }
 
 const MobileBottomBar: FC<MobileBottomBarProps> = ({
@@ -39,11 +39,7 @@ const MobileBottomBar: FC<MobileBottomBarProps> = ({
     };
 
     const handleProfile = () => {
-        if (session?.user) {
-            router.push('/account');
-        } else {
-            router.push('/signin');
-        }
+        router.push('/account');
     };
 
 
@@ -76,7 +72,7 @@ const MobileBottomBar: FC<MobileBottomBarProps> = ({
                             <span className='sr-only'>Messages</span>
                         </Button>
                     </Link>
-                    <Link href="#" className="flex items-center cursor-pointer select-none" legacyBehavior>
+                    <Link href="/account" className="flex items-center cursor-pointer select-none" legacyBehavior>
                         <Button onClick={handleProfile} size="xs" variant="outline" className="bg-transparent border-none rounded-full">
                             <Image src="/svg/user.svg" alt="" width={50} height={50} className='w-5 h-5 text-slate-700' />
                             <span className='sr-only'>Account</span>

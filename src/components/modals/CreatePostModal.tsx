@@ -424,9 +424,12 @@ const CreatePostModal: FC<CreatePostModalProps> = ({
                                                             </div>
                                                             <div className="w-full h-px bg-border" />
                                                             <div className="relative flex items-center justify-between w-full py-4 pr-2">
-                                                                <Label htmlFor="audience" className="font-normal">
+                                                                <Label htmlFor="audience" className="font-normal flex items-center">
                                                                     <span className='text-sm text-slate-600'>
                                                                         Visibility Options
+                                                                    </span>
+                                                                    <span className="text-xs text-slate-600 ml-1 inline-block sm:hidden">
+                                                                        {audience === "PRIVATE" ? "(private)" : "(public)"}
                                                                     </span>
                                                                 </Label>
                                                                 <Switch

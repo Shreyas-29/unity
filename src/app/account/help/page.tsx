@@ -11,7 +11,7 @@ export default async function UserHelpPage({
 }) {
 
     return (
-        <div className="relative flex flex-col items-start justify-start w-full h-full p-8 mx-auto md:ml-32 lg:ml-0 lg:p-8 md:px-4">
+        <div className="relative flex flex-col items-start justify-start w-full h-full p-4 mx-auto md:ml-32 lg:ml-0 lg:p-8 md:px-4">
             <div className="flex items-center justify-start w-full pt-12 pb-2 my-4 lg:hidden">
                 <Link href="/account">
                     <Button variant="outline" size="md" className="bg-transparent">
