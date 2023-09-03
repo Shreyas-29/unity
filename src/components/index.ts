@@ -57,6 +57,7 @@ import LikeButton from "./LikeButton";
 import StoryModal from "./StoryModal";
 import MobileBottomBar from "./MobileBottomBar";
 import Loader from "./Loader";
+import SkeletonLoader from "./SkeletonLoader";
 
 
 export {
@@ -140,5 +141,6 @@ export {
     StoryModal,
     MobileHeader,
     MobileBottomBar,
-    Loader
+    Loader,
+    SkeletonLoader
 }

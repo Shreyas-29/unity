@@ -11,7 +11,7 @@ const Loader = () => {
                     height={500}
                     className="w-12 h-12 object-cover"
                 />
-                <div className="absolute inset-x-0 bottom-5 flex flex-col items-center justify-center w-full">
+                <div className="absolute inset-x-0 bottom-5 flex flex-col items-center justify-center w-full mb-10 sm:pb-0">
                     <Image
                         src="/icons/unity.svg"
                         alt=""

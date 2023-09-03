@@ -85,6 +85,10 @@
   overflow-x: hidden;
 }
 
+body {
+  min-height: 100dvh !important;
+}
+
 image,
 img {
   -webkit-user-drag: none;
@@ -137,4 +141,21 @@ img {
   height: 8px;
   background-color: #ef4444;
   border-radius: 50%;
+  /* @apply to-slate-400 to-slate-300/50 */
+}
+
+/* components/Skeleton.module.css */
+.skeleton {
+  background: linear-gradient(90deg, #e2e8f080 25%, #cbd5e1 50%, #cbd5e180 75%);
+  background-size: 200% 100%;
+  animation: loading 2s infinite;
+}
+
+@keyframes loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
 }

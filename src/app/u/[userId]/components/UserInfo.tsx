@@ -156,7 +156,7 @@ const UserInfo: FC<UserInfoProps> = ({
                     <UserAvatar user={paramsUser} width="120px" height="120px" />
                 </div>
                 <div className="flex flex-col items-start flex-1">
-                    <div className="flex items-center gap-4">
+                    <div className="flex flex-col md:flex-row items-start md:items-center gap-4">
                         <h4 className="text-lg text-gray-900">
                             {paramsUser?.username || paramsUser?.name}
                         </h4>

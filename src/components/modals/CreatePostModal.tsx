@@ -200,11 +200,8 @@ const CreatePostModal: FC<CreatePostModalProps> = ({
                     className="flex flex-col items-center justify-center w-full h-full"
                 >
                     {!editorOpen && (
-                        <div className={cn(
-                            "flex flex-col items-center space-y-1.5 text-center w-full h-full",
-                            // imageUrl.length !== 0 ? "hidden" : "flex"
-                        )}>
-                            <DialogTitle className="flex items-center justify-center w-full pb-2 mx-auto text-center">
+                        <div className="flex flex-col items-center space-y-1.5 text-center w-full h-full">
+                            <DialogTitle className="flex items-center justify-center w-full py-4 md:pb-2 mx-auto text-center">
                                 <span className="text-center">
                                     Create new post
                                 </span>

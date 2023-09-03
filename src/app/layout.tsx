@@ -25,15 +25,12 @@ export default async function Layout({
     children: React.ReactNode,
     post: React.ReactNode
 }) {
-    // solitude
 
     const session = await getAuthSession();
 
     const posts = await getPosts();
 
     const stories = await getStories();
-
-    // startScheduler();
 
     return (
         <html lang="en">
