@@ -10,7 +10,7 @@ import { FC, useEffect, experimental_useOptimistic as useOptimistic, useState } 
 import UserTabs from "./UserTabs";
 import { ExtendedUser } from "@/types/user";
 import { usePathname, useRouter } from "next/navigation";
-import { toast, useCustomToast, useOptionsModal } from "@/hooks";
+import { useCustomToast, toast } from "@/hooks";
 import { useFollowingStore } from "@/store";
 import { ProfileView } from "@prisma/client";
 
@@ -63,11 +63,11 @@ const UserInfo: FC<UserInfoProps> = ({
     const followingIds = following.followingIds || [];
     // const followingIds = session?.user?.followingIds || [];
 
-    const [optimisticFollowingIds, updateOptimisticFollowingIds] = useOptimistic(followingIds,
-        (state, newFollowingId: string) => {
-            return [...state, newFollowingId];
-        }
-    );
+    // const [optimisticFollowingIds, updateOptimisticFollowingIds] = useOptimistic(followingIds,
+    //     (state, newFollowingId: string) => {
+    //         return [...state, newFollowingId];
+    //     }
+    // );
 
     const followedIds = paramsUser?.followersIds || [];
 
@@ -130,12 +130,11 @@ const UserInfo: FC<UserInfoProps> = ({
             }
 
         } catch (error) {
-            console.log("Error while follwing: ", error);
             toast({
                 title: 'Something went wrong.',
                 description: 'Your follower was not followed. Please try again.',
                 variant: 'destructive',
-            })
+            });
         } finally {
             setIsLoading(false);
             router.refresh();

@@ -1,7 +1,7 @@
 "use client";
 
 import { isImageValid } from '@/helpers';
-import { toast, useAlertModal, useCreatePostModal, useOnClickOutside } from '@/hooks';
+import { useAlertModal, useCreatePostModal, useOnClickOutside, toast } from '@/hooks';
 import { cn } from '@/lib/utils';
 import { usePostStore } from '@/store';
 import data from '@emoji-mart/data';
@@ -13,18 +13,12 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { FC, FormEvent, useEffect, experimental_useOptimistic as useOptimistic, useRef, useState } from 'react';
+// ts-ignore because experimental_useFormStatus is not in the types
+// @ts-ignore
 import { experimental_useFormStatus as useFormStatus } from 'react-dom';
 import { Button, Dialog, DialogContent, DialogTitle, Input, Label, Switch, Textarea, ToastAction, Tooltip, TooltipContent, TooltipProvider, TooltipTrigger, UserAvatar } from '..';
 
-
 interface CreatePostModalProps {
-    // createPost: (
-    //     content: string,
-    //     location: string,
-    //     imageUrl: string,
-    //     audience: string,
-    //     authorId: string
-    // ) => Promise<void>;
     createPost: (postData: FormData) => Promise<void>;
     posts: Post[];
 }
@@ -97,7 +91,6 @@ const CreatePostModal: FC<CreatePostModalProps> = ({
             return toast({
                 title: "Something went wrong",
                 description: "All fields are required. Please try again.",
-                variant: "destructive",
             });
         }
 
@@ -121,7 +114,6 @@ const CreatePostModal: FC<CreatePostModalProps> = ({
             toast({
                 title: "Something went wrong",
                 description: "Could not create post. Please try again",
-                variant: "destructive",
                 action: <ToastAction altText="Try again" onClick={() => router.refresh()}>Try again</ToastAction>
             });
         } finally {
@@ -138,30 +130,6 @@ const CreatePostModal: FC<CreatePostModalProps> = ({
                 });
             }, 1000);
         }
-
-        // await createPost(formData)
-        //     .then(() => {
-        //         ref.current?.reset();
-        //         setImageUrl("");
-        //         createPostModal.onClose();
-        //     })
-        //     .catch(() => {
-        //         toast({
-        //             title: "Something went wrong",
-        //             description: "Could not create post. Please try again",
-        //             variant: "destructive",
-        //             action: <ToastAction altText="Try again" onClick={() => router.refresh()}>Try again</ToastAction>
-        //         });
-        //     })
-        //     .finally(() => {
-        //         router.refresh();
-        //         setIsLoading(false);
-        //         setTimeout(() => {
-        //             toast({
-        //                 description: "Your post was published! 🎉"
-        //             });
-        //         }, 1000);
-        //     });
     };
 
     const closeEmojiPicker = () => {

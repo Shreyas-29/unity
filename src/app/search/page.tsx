@@ -1,11 +1,14 @@
 import React from 'react';
+import { getUsers } from "@/actions";
+import SearchBox from "./components/SearchBox";
 
 export default async function SearchPage() {
+
+    const users = await getUsers();
+
     return (
-        <div className="flex items-center justify-center h-full py-20">
-            <span className="font-medium text-center text-slate-800">
-                Search Page
-            </span>
+        <div className="flex items-center justify-center w-full pt-20">
+            <SearchBox users={users} />
         </div>
     )
 }

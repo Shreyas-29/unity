@@ -1,7 +1,7 @@
 "use client";
 
 import { Button, Dialog, DialogContent } from "@/components";
-import { toast, useOptionsModal } from "@/hooks";
+import { useOptionsModal, toast } from "@/hooks";
 import { ExtendedPost } from "@/types/post";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
@@ -26,14 +26,6 @@ const OptionsModal: FC<OptionsModalProps> = ({
     const [copied, setCopied] = useState<boolean>(false);
     const [followed, setFollowed] = useState<boolean>(false);
 
-    useEffect(() => {
-        if (optionsModal.isOpen) {
-            if (post?.author.followingIds.includes(session?.user?.id!)) {
-                setFollowed(true);
-            }
-        }
-    }, [optionsModal.isOpen, post?.author.followingIds, session?.user?.id]);
-
     const handleCloseModal = () => {
         optionsModal.onClose();
         setCopied(false);
@@ -56,13 +48,26 @@ const OptionsModal: FC<OptionsModalProps> = ({
         deletePost(post?.id!);
     };
 
+    const handleReport = () => {
+        toast({
+            description: "Your report has been submitted!",
+        });
+    };
+
+    useEffect(() => {
+        if (optionsModal.isOpen) {
+            if (post?.author.followingIds.includes(session?.user?.id!)) {
+                setFollowed(true);
+            }
+        }
+    }, [optionsModal.isOpen, post?.author.followingIds, session?.user?.id]);
 
     return (
         <Dialog open={optionsModal.isOpen} onOpenChange={handleCloseModal}>
             <DialogContent className="w-full max-w-sm p-0 border-none h-max">
                 <div className="flex flex-col items-center justify-center w-full py-4">
                     <div className="w-full">
-                        <Button variant="outline" size="lg" className="w-full border-transparent border-none text-destructive hover:bg-red-50 hover:text-destructive">
+                        <Button onClick={handleReport} variant="outline" size="lg" className="w-full border-transparent border-none text-destructive hover:bg-red-50 hover:text-destructive">
                             Report
                         </Button>
                     </div>
@@ -74,8 +79,8 @@ const OptionsModal: FC<OptionsModalProps> = ({
                         )}
                     </div>
                     {session?.user.id === post?.author.id ? (
-                        <div onClick={handleDelete} className="w-full border-b border-zinc-200/60">
-                            <Button variant="outline" size="lg" className="w-full border-transparent border-none text-destructive hover:bg-red-50 hover:text-destructive">
+                        <div className="w-full border-b border-zinc-200/60">
+                            <Button onClick={handleDelete} variant="outline" size="lg" className="w-full border-transparent border-none text-destructive hover:bg-red-50 hover:text-destructive">
                                 Delete
                             </Button>
                         </div>
@@ -100,8 +105,8 @@ const OptionsModal: FC<OptionsModalProps> = ({
                             {copied ? "Copied" : "Copy link"}
                         </Button>
                     </div>
-                    <div className="w-full" onClick={handleCloseModal}>
-                        <Button variant="outline" className="w-full border-transparent border-none">
+                    <div className="w-full">
+                        <Button onClick={handleCloseModal} variant="outline" className="w-full border-transparent border-none">
                             Cancel
                         </Button>
                     </div>

@@ -22,7 +22,7 @@ export default async function FeedPage() {
                 posts={posts as ExtendedPost[]}
                 like={like}
                 bookmark={bookmark}
-                stories={stories}
+                stories={stories!}
                 deletePost={deletePost}
             />
             <Followbar />

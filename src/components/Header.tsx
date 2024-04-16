@@ -20,9 +20,6 @@ const Header: FC<HeaderProps> = ({
                             <Image src="/icons/logo.svg" alt="" width={50} height={50} className="object-cover w-10 h-10" draggable={false} />
                         </Link>
                     </div>
-                    <div className='flex items-center justify-center w-full max-w-sm mx-auto'>
-                        {/* <Searchbar /> */}
-                    </div>
                     {session?.user ? (
                         <div className='flex items-center justify-center gap-4'>
                             <Actions session={session} />

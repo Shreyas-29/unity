@@ -17,6 +17,8 @@ import { Popover, PopoverContent, PopoverTrigger } from "./ui/Popover";
 import { Slider } from "./ui/Slider";
 import { Select, SelectContent, SelectGroup, SelectItem, SelectTrigger, SelectValue } from "./ui/Select";
 import { RadioGroup, RadioGroupItem } from "./ui/RadioGroup";
+import { Command, CommandDialog, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList, CommandSeparator, CommandShortcut } from "./ui/Command"
+import { SonnerToaster } from "./ui/sonner";
 
 import AuthForm from "./auth/AuthForm";
 import SignIn from "./auth/SignIn";
@@ -29,6 +31,7 @@ import CreatePostModal from "./modals/CreatePostModal";
 import OptionsModal from "./modals/OptionsModal";
 import AlertModal from "./modals/AlertModal";
 import CreateStoryModal from "./modals/CreateStoryModal";
+import SearchModal from "./modals/SearchModal";
 
 import Post from "./post/Post";
 import PostHeader from "./post/PostHeader";
@@ -57,6 +60,7 @@ import LikeButton from "./LikeButton";
 import StoryModal from "./StoryModal";
 import MobileBottomBar from "./MobileBottomBar";
 import Loader from "./Loader";
+import Spinner from "./Spinner";
 import SkeletonLoader from "./SkeletonLoader";
 
 
@@ -142,5 +146,8 @@ export {
     MobileHeader,
     MobileBottomBar,
     Loader,
-    SkeletonLoader
+    Spinner,
+    SkeletonLoader,
+    SearchModal,
+    SonnerToaster,
 }

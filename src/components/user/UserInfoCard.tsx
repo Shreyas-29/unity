@@ -25,10 +25,10 @@ const UserInfoCard: FC<UserInfoCardProps> = ({
                 </div>
                 <div className="flex flex-col items-start justify-start">
                     <span className="text-sm font-semibold truncate text-slate-800">
-                        {post.author.username || "_shreyas_ms"}
+                        {post?.author?.username || "_shreyas_ms"}
                     </span>
                     <span className="text-xs text-gray-600 capitalize">
-                        {post.author.name}
+                        {post?.author?.name}
                     </span>
                 </div>
             </div>

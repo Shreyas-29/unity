@@ -1,5 +1,5 @@
-import { createPost, createStory, getPosts, getStories } from '@/actions';
-import { AlertModal, CreatePostModal, CreateStoryModal, MobileBottomBar, MobileHeader, Providers, Toaster } from '@/components';
+import { createPost, createStory, getPosts, getStories, getUsers } from '@/actions';
+import { AlertModal, CreatePostModal, CreateStoryModal, MobileBottomBar, MobileHeader, Providers, SearchModal, Toaster } from '@/components';
 import Header from '@/components/Header';
 import { getAuthSession } from '@/lib/auth';
 import { cn } from '@/lib/utils';
@@ -32,6 +32,8 @@ export default async function Layout({
 
     const stories = await getStories();
 
+    const users = await getUsers();
+
     return (
         <html lang="en">
             <body className={cn(
@@ -42,6 +44,7 @@ export default async function Layout({
                 <Providers>
                     <CreatePostModal posts={posts} createPost={createPost} />
                     <CreateStoryModal stories={stories} createStory={createStory} />
+                    <SearchModal users={users} />
                     <AlertModal />
                     <main className='flex w-full min-h-screen mx-auto font-base'>
                         <div className='relative flex flex-col w-full h-full'>

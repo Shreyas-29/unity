@@ -1,5 +1,7 @@
-import { Sidebar } from '@/components';
+import { bookmark, deletePost, follow, getPostById, like } from "@/actions";
+import { Modal, PostContent, Sidebar } from '@/components';
 import { getAuthSession } from '@/lib/auth';
+import { IdPost } from "@/types/post-id";
 
 export default async function PostPage({
     params
@@ -9,12 +11,16 @@ export default async function PostPage({
 
     const session = await getAuthSession();
 
+    const post: IdPost | null = await getPostById(params?.postId);
+
     return (
-        <div className="flex max-w-lg mx-auto h-full md:pt-16 relative md:px-4">
-            <Sidebar session={session} />
-            <section className='h-full mx-auto flex items-center justify-center w-full px-4'>
-                Post content
-            </section>
-        </div>
-    )
-}
+        <PostContent
+            post={post!}
+            session={session}
+            like={like}
+            bookmark={bookmark}
+            follow={follow}
+            deletePost={deletePost}
+        />
+    );
+};

@@ -112,7 +112,7 @@ const PostContent: FC<ModalContentProps> = ({
                     <div className="flex items-center flex-1 gap-3">
                         <Image src={post?.author?.image!} alt="" width={50} height={50} unoptimized className='rounded-full w-7 h-7' />
                         <span className="font-bold text-gray-900">
-                            {post.author.username || post.author.name}
+                            {post?.author?.username || post?.author?.name}
                         </span>
                         {session?.user.id === post?.author.id ? null : (
                             <Button
@@ -143,7 +143,7 @@ const PostContent: FC<ModalContentProps> = ({
                         </div>
                         <div className="flex flex-col items-start justify-start w-full gap-1 ml-3">
                             <span className="text-sm font-bold text-gray-900 text-start">
-                                {post?.author.username || post.author.name}
+                                {post?.author.username || post?.author?.name}
                             </span>
                             <p className="max-w-full text-sm whitespace-pre-line text-neutral-700">
                                 {post.content && post.content}

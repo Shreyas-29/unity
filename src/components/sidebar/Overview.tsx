@@ -37,18 +37,23 @@ const Overview: FC<OverviewProps> = ({
                     <Separator />
                 )}
 
-                {users?.map((user) => (
-                    <Link key={user.id} href={`/u/${user.id}`} className="w-full">
-                        <div className="flex items-center justify-start flex-1 w-full py-2 px-4 bg-transparent hover:bg-slate-200/50 rounded-md cursor-pointer">
-                            <div className="flex items-center justify-center w-10 h-10 rounded-full">
-                                <UserAvatar user={user!} />
+                <div className="flex flex-col items-start w-full py-2">
+                    <p className="text-sm text-muted-foreground font-medium mb-4 ml-2">
+                        Suggested for you
+                    </p>
+                    {users?.map((user) => (
+                        <Link key={user.id} href={`/u/${user.id}`} className="w-full">
+                            <div className="flex items-center justify-start flex-1 w-full py-2 px-4 bg-transparent hover:bg-slate-200/50 rounded-md cursor-pointer">
+                                <div className="flex items-center justify-center w-10 h-10 rounded-full">
+                                    <UserAvatar user={user!} />
+                                </div>
+                                <span className="text-sm text-slate-800 font-medium ml-2">
+                                    {user?.name}
+                                </span>
                             </div>
-                            <span className="text-sm text-slate-800 font-medium ml-2">
-                                {user?.name}
-                            </span>
-                        </div>
-                    </Link>
-                ))}
+                        </Link>
+                    ))}
+                </div>
 
             </div>
         </div>

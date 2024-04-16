@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { FC } from "react";
 import { Actions, Button } from ".";
 import Image from 'next/image';
-import { toast, useCreatePostModal } from '@/hooks';
+import { toast, useCreatePostModal, useSearchModal } from '@/hooks';
 import { useRouter } from 'next/navigation';
 
 interface MobileBottomBarProps {
@@ -20,15 +20,18 @@ const MobileBottomBar: FC<MobileBottomBarProps> = ({
 
     const createPostModal = useCreatePostModal();
 
+    const searchModal = useSearchModal();
+
     const handleCreatePost = () => {
         createPostModal.onOpen();
     };
 
     const handleSearch = () => {
-        toast({
-            title: 'Coming Soon',
-            description: 'Search feature will be available soon.',
-        });
+        // toast({
+        //     title: 'Coming Soon',
+        //     description: 'Search feature will be available soon.',
+        // });
+        searchModal.onOpen();
     };
 
     const handleMessage = () => {
@@ -42,10 +45,8 @@ const MobileBottomBar: FC<MobileBottomBarProps> = ({
         router.push('/account');
     };
 
-
-
     return (
-        <header className="fixed inset-x-0 bottom-0 z-50 flex items-center justify-center overflow-visible md:hidden">
+        <div className="fixed inset-x-0 bottom-0 z-50 flex items-center justify-center overflow-visible md:hidden">
             <div className="relative z-50 w-full h-16 overflow-visible border-b border-slate-200 bg-white/30 backdrop-blur-xl shadow-gray-300/20">
                 <div className="flex items-center w-full h-full justify-evenly">
                     <Link href="/" className="flex items-center cursor-pointer select-none" legacyBehavior>
@@ -80,7 +81,7 @@ const MobileBottomBar: FC<MobileBottomBarProps> = ({
                     </Link>
                 </div>
             </div>
-        </header>
+        </div>
     );
 }
 
