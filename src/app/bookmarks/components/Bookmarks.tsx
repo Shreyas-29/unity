@@ -27,7 +27,7 @@ const Bookmarks: FC<BookmarksProps> = ({
         <div className="w-full mx-auto h-full flex flex-col items-start">
             <div className="flex flex-col items-start my-6">
                 <h1 className="text-2xl capitalize font-semibold text-gray-800">
-                    {user?.name}'s Bookmarks
+                    {user?.name}&apos;s Bookmarks
                 </h1>
             </div>
             <div className="grid w-full grid-cols-1 gap-4 py-4 mx-auto md:grid-cols-2 lg:grid-cols-3 lg:gap-8">

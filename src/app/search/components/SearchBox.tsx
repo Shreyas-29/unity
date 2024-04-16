@@ -22,7 +22,7 @@ const SearchBox = ({ users }: Props) => {
                     <CommandEmpty>No results found.</CommandEmpty>
                     <CommandGroup heading="Suggestions">
                         {users?.map((user) => (
-                            <CommandItem className="w-full">
+                            <CommandItem key={user?.id!} className="w-full">
                                 <div className="flex items-center justify-start w-full">
                                     <Image
                                         src={user.image! || user.profileImage!}

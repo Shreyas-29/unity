@@ -25,40 +25,8 @@ const SearchModal = ({ users }: Props) => {
 
     useEffect(() => {
         onClose();
-    }, [pathname]);
+    }, [pathname, onClose]);
 
-    {/* <Command>
-        <CommandInput
-            placeholder="Search for friends..."
-            className="w-full "
-        />
-        <CommandList className="max-h-full">
-            <CommandEmpty>No results found.</CommandEmpty>
-            <CommandGroup heading="Suggestions">
-                {users?.map((user) => (
-                    <CommandItem className="w-full">
-                        <div className="flex items-center justify-start w-full">
-                            <Image
-                                src={user.image! || user.profileImage!}
-                                alt={user.username!}
-                                width={1000}
-                                height={1000}
-                                className="w-6 h-6 rounded-full"
-                            />
-                            <div className="ml-2 flex flex-col items-start">
-                                <h6 className="text-gray-900 font-medium">
-                                    {user.name}
-                                </h6>
-                                <p className="text-muted-foreground text-sm">
-                                    @{user.username}
-                                </p>
-                            </div>
-                        </div>
-                    </CommandItem>
-                ))}
-            </CommandGroup>
-        </CommandList>
-    </Command> */}
     return (
         <CommandDialog open={isOpen} onOpenChange={handleClose}>
             <CommandInput placeholder="Search for friends..." />
@@ -66,7 +34,7 @@ const SearchModal = ({ users }: Props) => {
                 <CommandEmpty>No results found.</CommandEmpty>
                 <CommandGroup heading="Suggestions">
                     {users?.map((user) => (
-                        <CommandItem className="w-full">
+                        <CommandItem key={user?.id!} className="w-full">
                             <Link href={`/u/${user?.id}`} className="flex items-center justify-start w-full">
                                 <Image
                                     src={user.image! || user.profileImage!}
