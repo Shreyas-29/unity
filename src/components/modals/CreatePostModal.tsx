@@ -46,15 +46,15 @@ const CreatePostModal: FC<CreatePostModalProps> = ({
 
     const createPostModal = useCreatePostModal();
     const alertModal = useAlertModal();
-    const postInput = usePostStore();
+    const { postText, setPostText } = usePostStore();
 
     useEffect(() => {
         if (!createPostModal.isOpen) {
             setImageUrl("");
             setEditorOpen(false);
-            postInput.setPostText("");
+            setPostText("");
         }
-    }, [createPostModal.isOpen, postInput.postText, postInput]);
+    }, [createPostModal.isOpen, setPostText]);
 
     const [optimisticPosts, addOptimisticPost] = useOptimistic(posts, (state, newPost: Post) => {
         return [...state, newPost];
@@ -74,7 +74,7 @@ const CreatePostModal: FC<CreatePostModalProps> = ({
         let codesArray: number[] = [];
         sym.forEach((el: string) => codesArray.push(parseInt("0x" + el, 16)));
         let emoji = String.fromCodePoint(...codesArray);
-        postInput.setPostText(postInput.postText + emoji);
+        setPostText(postText + emoji);
     };
 
     const handleSubmit = async (e: FormEvent) => {
@@ -122,7 +122,7 @@ const CreatePostModal: FC<CreatePostModalProps> = ({
             setError(false);
             createPostModal.onClose();
             alertModal.onClose();
-            postInput.setPostText("");
+            setPostText("");
             setImageUrl("");
             setTimeout(() => {
                 toast({
@@ -138,14 +138,14 @@ const CreatePostModal: FC<CreatePostModalProps> = ({
 
     const handleCloseModal = () => {
         if (pending || isLoading) return;
-        if (postInput.postText.length || imageUrl) {
+        if (postText.length || imageUrl) {
             alertModal.onOpen();
             createPostModal.onOpen();
             return;
         }
         createPostModal.onClose();
         setError(false);
-        postInput.setPostText("");
+        setPostText("");
         setImageUrl("");
         router.refresh();
     };
@@ -333,8 +333,8 @@ const CreatePostModal: FC<CreatePostModalProps> = ({
                                                                 <Textarea
                                                                     name="content"
                                                                     disabled={pending || isLoading}
-                                                                    value={postInput.postText}
-                                                                    onChange={(e) => postInput.setPostText(e.target.value)}
+                                                                    value={postText}
+                                                                    onChange={(e) => setPostText(e.target.value)}
                                                                     placeholder="Write a caption..."
                                                                     className="w-full border-none px-0 min-h[110px] max-h-52 h-full focus-visible:ring-0 focus-visible:ring-transparent"
                                                                 />
@@ -416,7 +416,7 @@ const CreatePostModal: FC<CreatePostModalProps> = ({
                                                             type="submit"
                                                             size="default"
                                                             isLoading={isLoading}
-                                                            disabled={!postInput.postText || isLoading}
+                                                            disabled={!postText || isLoading}
                                                             className={cn(
                                                                 "ml-auto w-full lg:w-max",
                                                                 isLoading && "opacity-50 cursor-not-allowed"

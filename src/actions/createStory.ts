@@ -19,6 +19,9 @@ export const createStory = async (postData: FormData) => {
                 content: content as string,
                 image: image as string,
                 authorId: session?.user.id! as string,
+            },
+            include: {
+                author: true,
             }
         });
 

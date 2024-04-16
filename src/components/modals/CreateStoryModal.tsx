@@ -42,7 +42,7 @@ const CreateStoryModal: FC<CreateStoryModalProps> = ({
     const [togglePosition, setTogglePosition] = useState<boolean>(false);
 
 
-    const caption = useStoryStore();
+    const { caption, setCaption } = useStoryStore();
     const createStoryModal = useCreateStoryModal();
     const alertModal = useAlertModal();
 
@@ -50,9 +50,9 @@ const CreateStoryModal: FC<CreateStoryModalProps> = ({
         if (!createStoryModal.isOpen) {
             setImageUrl("");
             setEditorOpen(false);
-            caption.setCaption("");
+            setCaption("");
         }
-    }, [createStoryModal.isOpen, caption.caption, caption]);
+    }, [createStoryModal.isOpen, setCaption]);
 
     const [optimisticStories, addOptimisticStory] = useOptimistic(stories, (state, newStory: ExtendedStory) => {
         return [...state, newStory];
@@ -110,7 +110,7 @@ const CreateStoryModal: FC<CreateStoryModalProps> = ({
             setError(false);
             createStoryModal.onClose();
             alertModal.onClose();
-            caption.setCaption("");
+            setCaption("");
             setImageUrl("");
             setTimeout(() => {
                 toast({
@@ -122,14 +122,14 @@ const CreateStoryModal: FC<CreateStoryModalProps> = ({
 
     const handleCloseModal = () => {
         if (pending || isLoading) return;
-        if (imageUrl || caption.caption.length) {
+        if (imageUrl || caption.length) {
             alertModal.onOpen();
             createStoryModal.onOpen();
             return;
         }
         createStoryModal.onClose();
         setError(false);
-        caption.setCaption("");
+        setCaption("");
         setImageUrl("");
         router.refresh();
     };
@@ -368,8 +368,8 @@ const CreateStoryModal: FC<CreateStoryModalProps> = ({
                                                                 type="text"
                                                                 name="content"
                                                                 disabled={pending || isLoading}
-                                                                value={caption.caption}
-                                                                onChange={(e) => caption.setCaption(e.target.value)}
+                                                                value={caption}
+                                                                onChange={(e) => setCaption(e.target.value)}
                                                                 placeholder="Add a caption..."
                                                                 className="w-full"
                                                             />
