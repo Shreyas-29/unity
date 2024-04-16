@@ -1,9 +1,0 @@
-TODO 1: Make a view profile count using useeffect and usestate and make analytics using recharts
-TODO 2: Make a stories page
-TODO 3: Make a search bar and results
-TODO 4: Explore page
-TODO 5: Make a comments section in the post page
-TODO 6: Implement a dark mode
-TODO 7: Add a notifications in the header
-TODO 8: Get the randome users and show in the right sidebar
-TODO 9: Add a middleware to the routes of: account, account*

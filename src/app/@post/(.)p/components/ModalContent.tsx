@@ -10,7 +10,6 @@ interface ModalContentProps {
 
 const ModalContent: FC<ModalContentProps> = ({ }) => {
 
-
     const router = useRouter();
 
     const [isOpen, setIsOpen] = useState(false);

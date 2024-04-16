@@ -1,4 +1,4 @@
-import { Header } from '@/components';
+import { Header, Sidebar } from '@/components';
 import { getAuthSession } from '@/lib/auth';
 import React from 'react';
 
@@ -16,7 +16,10 @@ export default async function PostPageLayout({
                 <div className='flex w-full'>
                     <Header session={session} />
                 </div>
-                {children}
+                <div className="flex sm:max-w-3xl lg:max-w-[calc(100%-288px)] sm:mx-auto lg:ml-auto lg:mr-0 h-full md:pt-16 relative max-w-full px-4 lg:px-10">
+                    <Sidebar session={session} />
+                    {children}
+                </div>
             </div>
         </main>
     )

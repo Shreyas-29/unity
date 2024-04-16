@@ -6,7 +6,7 @@ import { useOptionsModal } from './use-options-modal';
 import { useCustomToast } from './use-auth-toast';
 import { useCreateStoryModal } from './use-create-story-modal';
 import { useStoryModal } from './story-modal';
-
+import { useSearchModal } from "./use-search-modal";
 
 export {
     toast,
@@ -16,5 +16,6 @@ export {
     useOptionsModal,
     useCustomToast,
     useCreateStoryModal,
-    useStoryModal
+    useStoryModal,
+    useSearchModal,
 }

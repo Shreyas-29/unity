@@ -1,7 +1,7 @@
 "use client";
 
 import { isImageValid } from '@/helpers';
-import { toast, useAlertModal, useCreateStoryModal } from '@/hooks';
+import { useAlertModal, useCreateStoryModal, toast } from '@/hooks';
 import { cn } from '@/lib/utils';
 import { useStoryStore } from '@/store';
 import { ExtendedStory } from '@/types/story';
@@ -11,9 +11,10 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { FC, FormEvent, useEffect, experimental_useOptimistic as useOptimistic, useRef, useState } from 'react';
+// ts-ignore because experimental_useFormStatus is not in the types
+// @ts-ignore
 import { experimental_useFormStatus as useFormStatus } from 'react-dom';
 import { Button, Dialog, DialogContent, DialogTitle, Input, ToastAction, Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '..';
-
 
 interface CreateStoryModalProps {
     createStory: (postData: FormData) => Promise<void>;
@@ -79,7 +80,6 @@ const CreateStoryModal: FC<CreateStoryModalProps> = ({
             return toast({
                 title: "Something went wrong",
                 description: "Caption or image is missing. Please try again.",
-                variant: "destructive",
             });
         }
 
@@ -118,30 +118,6 @@ const CreateStoryModal: FC<CreateStoryModalProps> = ({
                 });
             }, 1000);
         }
-
-        // await createStory(formData)
-        //     .then(() => {
-        //         ref.current?.reset();
-        //         setImageUrl("");
-        //         createStoryModal.onClose();
-        //     })
-        //     .catch(() => {
-        //         toast({
-        //             title: "Something went wrong",
-        //             description: "Could not create post. Please try again",
-        //             variant: "destructive",
-        //             action: <ToastAction altText="Try again" onClick={() => router.refresh()}>Try again</ToastAction>
-        //         });
-        //     })
-        //     .finally(() => {
-        //         router.refresh();
-        //         setIsLoading(false);
-        //         setTimeout(() => {
-        //             toast({
-        //                 description: "Your post was published! 🎉"
-        //             });
-        //         }, 1000);
-        //     });
     };
 
     const handleCloseModal = () => {

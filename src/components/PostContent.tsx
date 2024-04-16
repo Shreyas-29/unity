@@ -124,7 +124,7 @@ const PostContent: FC<ModalContentProps> = ({
                     <div className="flex items-center flex-1 gap-3">
                         <Image src={post?.author?.image!} alt="" width={50} height={50} unoptimized className='rounded-full w-7 h-7' />
                         <span className="font-bold text-gray-900">
-                            {post.author.username || post.author.name}
+                            {post?.author?.username || post?.author?.name}
                         </span>
                         {session?.user.id === post?.author.id ? null : (
                             <Button
@@ -148,14 +148,14 @@ const PostContent: FC<ModalContentProps> = ({
                     </div>
                     <OptionsModal post={post} deletePost={deletePost} />
                 </div>
-                <div className="items-start hidden w-full h-[calc(100%-100px)] py-3 overflow-y-scroll lg:flex lg:flex-col border-b border-gray-100">
+                <div className="items-start w-full h-[calc(100%-100px)] py-3 overflow-y-scroll flex flex-col border-b border-gray-100">
                     <div className="flex items-start w-full">
                         <div className="flex items-center justify-start w-8 h-8">
                             <Image src={post?.author?.image!} alt="" width={50} height={50} unoptimized className='rounded-full w-7 h-7' />
                         </div>
                         <div className="flex flex-col items-start justify-start w-full gap-1 ml-3">
                             <span className="text-sm font-bold text-gray-900 text-start">
-                                {post?.author.username || post.author.name}
+                                {post?.author.username || post?.author?.name}
                             </span>
                             <p className="max-w-full text-sm whitespace-pre-line text-neutral-700">
                                 {post.content && post.content}
@@ -207,7 +207,7 @@ const PostContent: FC<ModalContentProps> = ({
                                 <Input
                                     type="text"
                                     placeholder="Add a comment..."
-                                    className="w-full border-none focus-visible:ring-0 focus-visible:ring-transparent focus:outline-none h-9 !px-2 rounded-none"
+                                    className="w-full border-none focus-visible:ring-0 focus-visible:ring-transparent focus:outline-none h-9 !px-2 rounded-none bg-transparent"
                                 />
                             </div>
                             <div className="flex items-center justify-end">

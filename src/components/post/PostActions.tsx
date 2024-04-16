@@ -49,7 +49,7 @@ const PostActions: FC<PostActionsProps> = ({
                         showFullContent && "flex-col text-start items-start"
                     )}>
                         <span className="mr-1 text-sm font-bold text-slate-800 min-w-max">
-                            {post?.author.username || post.author.name}
+                            {post?.author.username || post?.author?.name}
                         </span>
                         {post.content && (
                             <div className="text-sm text-neutral-800">

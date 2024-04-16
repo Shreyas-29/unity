@@ -47,13 +47,13 @@ const PostHeader: FC<PostHeaderProps> = ({
                                 <HoverCardTrigger asChild>
                                     <Link href={`/u/${post.author?.id}`} legacyBehavior>
                                         <span className="text-sm font-semibold cursor-pointer text-slate-900">
-                                            {post.author.username ? (
+                                            {post?.author?.username ? (
                                                 <span className="lowercase">
-                                                    {post.author.username}
+                                                    {post?.author?.username}
                                                 </span>
                                             ) : (
                                                 <span className="capitalize">
-                                                    {post.author.name}
+                                                    {post?.author?.name}
                                                 </span>
                                             )}
                                         </span>

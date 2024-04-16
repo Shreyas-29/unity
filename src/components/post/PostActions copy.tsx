@@ -1,6 +1,7 @@
 "use client";
 
-import { toast, useCustomToast } from "@/hooks";
+// dummy file not used anywhere
+
 import { cn } from "@/lib/utils";
 import { ExtendedPost } from "@/types/post";
 import { Heart } from "lucide-react";
@@ -10,6 +11,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { FC, useEffect, experimental_useOptimistic as useOptimistic, useState } from "react";
 import { Button } from "..";
+import { toast } from "sonner";
 
 interface PostActionsProps {
     post: ExtendedPost;
@@ -233,7 +235,7 @@ interface PostActionsProps {
 //                         showFullContent && "flex-col text-start items-start"
 //                     )}>
 //                         <span className="mr-1 text-sm font-bold text-slate-800 min-w-max">
-//                             {post?.author.username || post.author.name}
+//                             {post?.author.username || post?.author?.name}
 //                         </span>
 //                         {post.content && (
 //                             <div className="text-sm text-neutral-800">

@@ -1,5 +1,6 @@
 "use client";
 
+import { useSearchModal } from "@/hooks";
 import { routes } from '@/lib/routes';
 import { cn } from '@/lib/utils';
 import { Session } from 'next-auth';
@@ -7,10 +8,18 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from "next/navigation";
 import { FC } from 'react';
+import { Button } from "../ui/Button";
 
 interface SidebarProps {
     session?: Session | null;
     border?: boolean;
+}
+
+interface Route {
+    label: string;
+    image: string;
+    href: string;
+    color: string;
 }
 
 const Sidebar: FC<SidebarProps> = ({
@@ -19,6 +28,8 @@ const Sidebar: FC<SidebarProps> = ({
 }) => {
 
     const pathname = usePathname();
+
+    const { isOpen, onOpen } = useSearchModal();
 
     return (
         <div className={cn(
@@ -31,6 +42,7 @@ const Sidebar: FC<SidebarProps> = ({
                         <Link
                             key={route.href}
                             href={route.href}
+                            passHref
                             className={cn(
                                 "flex items-center justify-center xl:justify-start w-full xl:px-5 py-2.5 font-medium group transition transform duration-300 active:scale-90 rounded-xl font-base hover:bg-slate-100 text-slate-700",
                                 pathname === route.href ? "text-slate-900 font-semibold" : route.color
@@ -50,6 +62,26 @@ const Sidebar: FC<SidebarProps> = ({
                             </div>
                         </Link>
                     ))}
+                    <Button
+                        onClick={() => onOpen()}
+                        className={cn(
+                            "flex items-center justify-center xl:justify-start w-full xl:px-5 py-2.5 font-medium group transition transform duration-300 active:scale-90 rounded-xl font-base bg-transparent hover:bg-slate-100",
+                            isOpen ? "text-slate-900 font-semibold" : "text-slate-600"
+                        )}
+                    >
+                        <div className="flex items-center w-max xl:w-full">
+                            <Image
+                                src="/svg/search.svg"
+                                alt="🔍"
+                                width={50}
+                                height={50}
+                                className="object-cover w-4 h-4 select-none xl:mr-3 group-hover:scale-110"
+                            />
+                            <span className="hidden text-sm xl:block">
+                                Search
+                            </span>
+                        </div>
+                    </Button>
                 </div>
                 <div className="flex items-center justify-center w-full mt-auto mb-3 xl:justify-start">
                     <div className="flex items-center justify-center lg:justify-start w-full py-2.5 cursor-pointer hover:bg-slate-100 group text-slate-700 rounded-xl xl:px-5">
